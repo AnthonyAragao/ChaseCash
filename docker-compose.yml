@@ -44,6 +44,19 @@ services:
         networks:
             - laravel
 
+    # phpmyadmin
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        restart: unless-stopped
+        ports:
+            - "8080:80"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+        networks:
+            - laravel
+        depends_on:
+            - db
+
     # redis
     redis:
         image: redis:latest
