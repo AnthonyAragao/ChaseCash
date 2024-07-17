@@ -11,10 +11,9 @@ class Parcela extends Model
 
     protected $guarded = [];
 
-
-    public function getMetodoPagaAttribute(): string
+    public function getMetodoPagamentoAttribute(): MetodoPagamento
     {
-        return $this->metodoPagamentoRelationship->nome;
+        return $this->metodoPagamentoRelationship;
     }
 
     // Relantionships

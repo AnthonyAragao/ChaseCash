@@ -11,7 +11,7 @@ class Produto extends Model
 
     protected $guarded = [];
 
-    public function getItensVendaAttribute(): HasMany
+    public function getItensVendaAttribute()
     {
         return $this->itensVendaRelationship;
     }

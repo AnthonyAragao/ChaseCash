@@ -17,14 +17,14 @@ class Venda extends Model
         return $this->clienteRelationship;
     }
 
-    public function getItensVendaAttribute(): array
+    public function getItensVendaAttribute()
     {
-        return $this->itensVendaRelationship->toArray();
+        return $this->itensVendaRelationship;
     }
 
-    public function getParcelasAttribute(): array
+    public function getParcelasAttribute()
     {
-        return $this->parcelasRelationship->toArray();
+        return $this->parcelasRelationship;
     }
 
     // Setters
