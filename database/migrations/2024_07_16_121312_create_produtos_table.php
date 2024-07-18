@@ -11,10 +11,12 @@ return new class extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->float('preco');
-            $table->string('descricao')->nullable();
+            $table->float('custo');
+            $table->float('preco_venda');
+            $table->string('codigo')->unique()->nullable();
+            $table->string('fornecedor');
             $table->bigInteger('pontos')->default(0);
-            $table->integer('estoque');
+            $table->integer('estoque')->nullable();
             $table->string('imagem')->nullable();
             $table->timestamps();
         });
