@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('table.css');
+@import url('sidebar.css');
+@import url('modal.css');
 
 *{
     margin: 0;
@@ -19,118 +21,6 @@ main{
     width: 100%;
     padding: 24px;
     background-color: #F2F7F9;
-}
-
-#sidebar{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #ffffff;
-    position: relative;
-    transition: all .5s;
-    width: 310px;
-    height: 100vh;
-    z-index: 2;
-}
-
-#sidebar_content{
-    padding: 12px;
-}
-
-#user{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 24px;
-}
-
-#user_avatar{
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 20px;
-}
-
-#user_infos{
-    display: flex;
-    flex-direction: column;
-}
-
-#user_infos span:last-child{
-    font-size: 12px;
-    color: #6b6b6b;
-}
-
-#side-items{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    list-style: none;
-}
-
-.side-item{
-    border-radius: 12px;
-    cursor: pointer;
-}
-
-.side-item.active{
-    background-color: #4f46e5;
-}
-
-.side-item:hover:not(.active),
-#logout_btn:hover{
-    background-color: #e3e9f7;
-}
-
-.side-item a{
-    text-decoration: none;
-    color: #0a0a0a;
-    display: flex;
-    justify-content: flex-start;
-    gap: 6px;
-    padding: 12px;
-}
-
-.side-item.active a{
-    color: #ffffff;
-}
-
-.side-item a i{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 18px;
-    height: 18px;
-}
-
-#logout{
-    border-top: 1px solid #e3e9f7;
-    padding: 12px;
-}
-
-#logout_btn{
-    border: none;
-    padding: 12px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    text-align: start;
-    background-color: transparent;
-}
-
-
-.item-description{
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    font-size: 14px;
-    transition: width .6s;
-    font-family: 'Kanit', sans-serif;
-    width: 150px;
-    height: auto;
 }
 
 h2{

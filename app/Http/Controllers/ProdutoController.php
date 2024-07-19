@@ -20,12 +20,6 @@ class ProdutoController extends Controller
         ]);
     }
 
-    public function create(): View
-    {
-        return view('produtos.form');
-    }
-
-
     public function store(Request $request): RedirectResponse
     {
         $this->produtos->create($request->all());

@@ -5,7 +5,7 @@
     <div class="search-and-add">
         <input type="search" placeholder="Pesquisar" class="search-and-add__input">
 
-        <a href="" class="search-and-add__link">
+        <a href="" class="search-and-add__link" id="btn_open_modal">
             <i class="fa-solid fa-plus"></i> Novo produto
         </a>
     </div>
@@ -39,4 +39,15 @@
             @endforeach
         </tbody>
     </table>
+
+
+    <x-modal title="Novo produto">
+        <p>Este é  o conteudo</p>
+
+        <x-slot name="footer">
+            <button class="btn_close_modal">Fechar</button>
+        </x-slot>
+    </x-modal>
 @endsection
+
+

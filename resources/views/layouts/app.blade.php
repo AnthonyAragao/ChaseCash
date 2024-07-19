@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>ChaseCash</title>
 </head>
 
@@ -29,7 +29,7 @@
                 </li>
 
                 <li class="side-item" data-id="clientes">
-                    <a href="">
+                    <a href="{{ route("clientes.index") }}">
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">
                             Clientes
@@ -71,37 +71,6 @@
         @yield('content')
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            function restoreActiveState() {
-                const activeId = localStorage.getItem('activeSideItem');
-                if (activeId) {
-                    btns.forEach(btn => {
-                        if (btn.getAttribute('data-id') === activeId) {
-                            btn.classList.add('active');
-                        } else {
-                            btn.classList.remove('active');
-                        }
-                    });
-                }
-            }
-
-            btns = document.querySelectorAll('.side-item');
-            btns.forEach(btn => {
-                btn.addEventListener('click', function () {
-                    btns.forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-
-                    this.classList.add('active');
-
-                    localStorage.setItem('activeSideItem', this.getAttribute('data-id'));
-
-                });
-            });
-
-            restoreActiveState();
-        });
-    </script>
+    @yield('scripts')
 </body>
 </html>
