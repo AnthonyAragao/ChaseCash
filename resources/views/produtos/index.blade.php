@@ -45,7 +45,10 @@
         <p>Este é  o conteudo</p>
 
         <x-slot name="footer">
-            <button class="btn_close_modal">Fechar</button>
+            <div>
+                <button class="btn_close_modal">Fechar</button>
+                <button class="modal-footer__salvar">Salvar</button>
+            </div>
         </x-slot>
     </x-modal>
 @endsection
