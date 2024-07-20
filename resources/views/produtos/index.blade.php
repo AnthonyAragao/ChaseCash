@@ -1,15 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>Meus produtos</h2>
 
 {{-- Caminho da página --}}
-<div class="page-path">
-    <span class="icon"><a href="#"><i class="fa-solid fa-home"></i></a></span>
-    <span class="separator"><i class="fa-solid fa-angle-right"></i></span>
-    <span class="active">
-        <a href="#">Produtos</a>
-    </span>
+<div class="page-path-and-img">
+    <img src="{{asset("images/produtos.png")}}" alt="">
+
+    <div>
+        <h2>Meus produtos</h2>
+        <div class="page-path">
+            <span class="icon"><a href="#"><i class="fa-solid fa-home"></i></a></span>
+            <span class="separator"><i class="fa-solid fa-angle-right"></i></span>
+            <span class="active">
+                <a href="#">Produtos</a>
+            </span>
+        </div>
+    </div>
 </div>
 
 <div class="search-and-add">

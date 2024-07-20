@@ -8,7 +8,7 @@
 
     .pagination-item {
         display: inline-block;
-        padding: 0 7px;
+        padding: 0 8px;
         margin-right: 0.2rem;
         border-radius: 4px;
         color: #6b7280;
