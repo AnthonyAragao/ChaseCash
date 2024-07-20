@@ -22,7 +22,16 @@ class ProdutoController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
-        $this->produtos->create($request->all());
+        $this->produtos->create([
+            'nome' => $request->nome,
+            'fornecedor' => 'Hinode',
+            'codigo' => $request->codigo,
+            'custo' => floatval(str_replace(',', '.', $request->custo)),
+            'preco_venda' => floatval(str_replace(',', '.', $request->preco_venda)),
+            'pontos' => $request->pontos,
+            'estoque' => $request->estoque,
+        ]);
+
         return redirect()->route('produtos.index');
     }
 
