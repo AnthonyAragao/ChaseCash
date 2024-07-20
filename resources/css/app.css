@@ -4,6 +4,7 @@
 @import url('sidebar.css');
 @import url('modal.css');
 
+/* -----------------Config. gerais --------------- */
 *{
     margin: 0;
     padding: 0;
@@ -29,6 +30,45 @@ h2{
     font-weight: bold;
     margin-top: 20px;
 }
+
+/* -----------------Caminho da página --------------- */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: #f3f4f6;
+    padding: .2rem .9rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 0.7rem;
+    width: fit-content;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #3b82f6;
+    transition: color 0.2s ease-in-out;
+}
+
+.breadcrumb a:hover {
+    color: #1d4ed8;
+}
+
+.breadcrumb .separator {
+    color: #3b82f6;
+}
+
+.breadcrumb .active {
+    color: #1f2937;
+    font-weight: bold;
+}
+
+.breadcrumb .icon {
+    color: #3b82f6;
+}
+
+
+
 
 .search-and-add{
     display: flex;

@@ -1,7 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>Produtos</h2>
+<h2>Meus produtos</h2>
+
+<div class="breadcrumb">
+    <span class="icon"><a href="#"><i class="fa-solid fa-home"></i></a></span>
+    <span class="separator"><i class="fa-solid fa-angle-right"></i></span>
+    <span class="active">
+        <a href="#" class="">Produtos</a>
+    </span>
+</div>
+
 <div class="search-and-add">
     <input type="search" placeholder="Pesquisar" class="search-and-add__input">
 
@@ -39,6 +48,11 @@
         @endforeach
     </tbody>
 </table>
+
+<div>
+    {{ $produtos->links() }}
+</div>
+
 
 {{-- Modal add produto --}}
 <x-modal title="Novo produto">
