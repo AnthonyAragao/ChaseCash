@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('parcelas', function (Blueprint $table) {
             $table->id();
-            $table->float('valor');
+            $table->decimal('valor', 8, 2);
             $table->boolean('pago')->default(false);
             $table->date('data_vencimento');
             $table->foreignId('metodo_pagamento_id')->constrained('metodos_pagamento');

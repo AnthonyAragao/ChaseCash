@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('vendas', function (Blueprint $table) {
             $table->id();
-            $table->float('valor_total');
+            $table->decimal('valor_total', 8, 2);
             $table->date('data_venda');
             $table->foreignId('cliente_id')->constrained('clientes');
             $table->timestamps();

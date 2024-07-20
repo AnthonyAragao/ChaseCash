@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('itens_venda', function (Blueprint $table) {
             $table->id();
             $table->integer('quantidade');
-            $table->float('preco_unitario');
+            $table->decimal('preco_unitario', 8, 2);
             $table->foreignId('produto_id')->constrained('produtos');
             $table->foreignId('venda_id')->constrained('vendas');
         });
