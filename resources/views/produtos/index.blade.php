@@ -3,11 +3,12 @@
 @section('content')
 <h2>Meus produtos</h2>
 
-<div class="breadcrumb">
+{{-- Caminho da página --}}
+<div class="page-path">
     <span class="icon"><a href="#"><i class="fa-solid fa-home"></i></a></span>
     <span class="separator"><i class="fa-solid fa-angle-right"></i></span>
     <span class="active">
-        <a href="#" class="">Produtos</a>
+        <a href="#">Produtos</a>
     </span>
 </div>
 
@@ -19,6 +20,7 @@
     </a>
 </div>
 
+{{-- Tabela de produtos --}}
 <table>
     <thead>
         <tr>

@@ -32,7 +32,7 @@ h2{
 }
 
 /* -----------------Caminho da página --------------- */
-.breadcrumb {
+.page-path {
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -44,31 +44,28 @@ h2{
     width: fit-content;
 }
 
-.breadcrumb a {
+.page-path a {
     text-decoration: none;
     color: #3b82f6;
     transition: color 0.2s ease-in-out;
 }
 
-.breadcrumb a:hover {
+.page-path a:hover {
     color: #1d4ed8;
 }
 
-.breadcrumb .separator {
+.page-path .separator {
     color: #3b82f6;
 }
 
-.breadcrumb .active {
+.page-path .active {
     color: #1f2937;
     font-weight: bold;
 }
 
-.breadcrumb .icon {
+.page-path .icon {
     color: #3b82f6;
 }
-
-
-
 
 .search-and-add{
     display: flex;
