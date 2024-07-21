@@ -58,8 +58,8 @@ h2{
     text-decoration: none;
     color: #3b82f6;
     transition: color 0.2s ease-in-out;
+    font-weight: bold;
 }
-
 .page-path a:hover {
     color: #1d4ed8;
 }
@@ -70,13 +70,16 @@ h2{
 
 .page-path .active {
     color: #1f2937;
-    font-weight: bold;
+    cursor: default;
+}
+
+.page-path .active:hover {
+    color: #1f2937;
 }
 
 .page-path .icon {
     color: #3b82f6;
 }
-
 
 .add__link{
     text-decoration: none;

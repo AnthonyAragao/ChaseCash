@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class ClienteController extends Controller
 {
@@ -18,11 +19,6 @@ class ClienteController extends Controller
         ]);
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
         //
@@ -30,7 +26,10 @@ class ClienteController extends Controller
 
     public function show(string $id)
     {
-        //
+        $cliente = $this->clientes->find(Crypt::decrypt($id));
+        return view('clientes.form', [
+            'cliente' => $cliente
+        ]);
     }
 
 

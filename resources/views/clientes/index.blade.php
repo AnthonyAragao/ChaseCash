@@ -8,9 +8,7 @@
         <div class="page-path">
             <span class="icon"><a href="#"><i class="fa-solid fa-home"></i></a></span>
             <span class="separator"><i class="fa-solid fa-angle-right"></i></span>
-            <span class="active">
-                <a href="#">Clientes</a>
-            </span>
+            <span><a href="#" class="active">Clientes</a></span>
         </div>
     </div>
 </div>
@@ -43,7 +41,7 @@
                     <td>{{ formatPhoneNumber($cliente->telefone) }}</td>
                     <td>{{ $cliente->email ?? 'Não informado' }}</td>
                     <td class="table-btns">
-                        <a href="" class="table-btns__view">
+                        <a href="{{ route("clientes.show", Crypt::encrypt($cliente->id)) }}" class="table-btns__view">
                             <i class="fa-solid fa-eye"></i> Visualizar
                         </a>
 

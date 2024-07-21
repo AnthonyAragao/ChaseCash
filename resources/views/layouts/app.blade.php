@@ -18,7 +18,7 @@
     <nav id="sidebar">
         <div id="sidebar_content">
             <div id="user">
-                <img src="images/avatar.jpg" id="user_avatar" alt="Avatar">
+                <img src="{{ asset("images/avatar.jpg") }}" id="user_avatar" alt="Avatar">
 
                 <p id="user_infos">
                     <span class="item-description">Irineu</span>

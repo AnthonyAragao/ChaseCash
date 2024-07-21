@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 {{-- Caminho da página --}}
 <div class="page-path-and-img">
     <img src="{{asset("images/produtos.png")}}" alt="">
@@ -11,9 +10,7 @@
         <div class="page-path">
             <span class="icon"><a href="#"><i class="fa-solid fa-home"></i></a></span>
             <span class="separator"><i class="fa-solid fa-angle-right"></i></span>
-            <span class="active">
-                <a href="#">Produtos</a>
-            </span>
+            <span><a href="#" class="active">Produtos</a></span>
         </div>
     </div>
 </div>
@@ -64,8 +61,6 @@
     </table>
     {{ $produtos->links() }}
 </div>
-
-
 
 {{-- Modal add produto --}}
 <x-modal title="Novo produto">
