@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 {{-- Caminho da página --}}
 <div class="page-path-and-img">
     <div>
@@ -41,7 +40,7 @@
             @foreach ($clientes as $cliente)
                 <tr>
                     <td>{{ $cliente->nome }}</td>
-                    <td>{{ $cliente->telefone }}</td>
+                    <td>{{ formatPhoneNumber($cliente->telefone) }}</td>
                     <td>{{ $cliente->email ?? 'Não informado' }}</td>
                     <td class="table-btns">
                         <a href="" class="table-btns__view">
