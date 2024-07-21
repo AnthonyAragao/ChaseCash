@@ -3,21 +3,23 @@
         display: flex;
         list-style-type: none;
         padding: 0;
-        margin: 0;
     }
 
     .pagination-item {
         display: inline-block;
-        padding: 0 8px;
+        padding: 2px 12px;
         margin-right: 0.2rem;
-        border-radius: 4px;
+        border-radius: 8px;
         color: #6b7280;
+        border: 1px solid #d1d5db;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     }
 
     .pagination-item.active {
-        background-color: #4f46e5;
+        background-color: #22331D;
         color: #fff;
-        border: 1px solid #4f46e5;
+        border: 1px solid #22331D;
+
     }
 
     .pagination-item.disabled {
@@ -31,10 +33,19 @@
         text-decoration: none;
         color: #6b7280;
     }
+
+    .pagination-item:first-child,
+    .pagination-item:last-child {
+        color: #22331D;
+        border: none;
+        background-color: white;
+        box-shadow: none;
+    }
+
 </style>
 
 @if ($paginator->hasPages())
-    <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}" style="margin-top:8px">
+    <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}" style="margin-top:15px;">
         <div style="display: flex; justify-content:space-between">
             <div>
                 <p style="color: #6b7280; font-size: 0.875rem; font-weight: 600;">
@@ -52,12 +63,12 @@
                     {{-- Previous Page Link --}}
                     @if ($paginator->onFirstPage())
                         <li class="pagination-item disabled" aria-disabled="true">
-                            <span aria-hidden="true">&lsaquo;</span>
+                            <i class="fa-solid fa-chevron-left"></i>
                         </li>
                     @else
                         <li class="pagination-item">
                             <a href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="{{ __('pagination.previous') }}">
-                                &lsaquo;
+                                <i class="fa-solid fa-chevron-left"></i>
                             </a>
                         </li>
                     @endif
@@ -109,12 +120,14 @@
                     @if ($paginator->hasMorePages())
                         <li class="pagination-item">
                             <a href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="{{ __('pagination.next') }}">
-                                &rsaquo;
+                                <i class="fa-solid fa-chevron-right"></i>
                             </a>
                         </li>
                     @else
                         <li class="pagination-item disabled" aria-disabled="true">
-                            <span aria-hidden="true">&rsaquo;</span>
+                            <span aria-hidden="true">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
                         </li>
                     @endif
                 </ul>

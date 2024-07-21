@@ -1,9 +1,40 @@
+.title-and-table{
+    background-color: white;
+    padding: 15px 26px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 0px #0000001a;
+}
+
+.title-and-table__container{
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.title-and-table__container input {
+    border: 1px solid #e5e7eb;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 7px 10px;
+    width: 170px;
+    font-size: 12px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.title-and-table__container input:focus{
+    outline: none;
+}
+
 table{
     width: 100%;
     background-color: white;
     border-radius: 4px;
     margin-top: 8px;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
     border-collapse: collapse;
     border-spacing: 0;
 }
@@ -11,7 +42,6 @@ table{
 thead{
     text-align: justify;
     border-spacing: 0;
-    background-color: #F3F4F8;
 }
 
 thead th{
@@ -20,24 +50,58 @@ thead th{
     font-size: 14px;
     color: #7D7D7D;
     border-bottom: 1px solid #E0E0E0;
+    border-top: 2px solid #E0E0E0;
     text-transform: uppercase;
 }
 
-tbody tr:not(:last-child){
+tbody tr{
     border-bottom: 2px solid #EDF0F3;
 }
 
 tbody tr td{
     padding: 10px;
-    font-size: 14px;
+    font-size: 13px;
     color: #1f2937;
     font-weight: 600;
 }
 
+.table-btns{
+    display: flex;
+    gap: 5px;
+}
 
-tbody tr td a{
-    padding: 0 8px;
-    color: #7D7D7D;
+.table-btns__view, .table-btns__edit, .table-btns__delete{
+    padding: 2px 8px;
     border-radius: 4px;
-    border: 1px solid #7D7D7D;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+}
+
+.table-btns__view{
+    background-color: rgb(79, 70, 229);
+}
+
+.table-btns__edit{
+    background-color: rgb(250 204 21);
+    color: rgb(133 77 14);
+}
+
+.table-btns__delete{
+    background-color: rgb(220, 38, 38);
+}
+
+.table-btns__edit:hover{
+    background-color: rgb(250 204 21 / 80%);
+}
+
+.table-btns__delete:hover{
+    background-color: rgb(220, 38, 38, 0.8);
+
+}
+
+.table-btns__view:hover{
+    background-color: rgb(79, 70, 229, 0.8);
 }
