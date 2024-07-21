@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('email')->nullable()->unique();
             $table->string('telefone')->nullable();
             $table->date('data_nascimento')->nullable();
-            $table->foreignId('endereco_id')->constrained('enderecos')->nullable();
+            $table->foreignId('endereco_id')->nullable()->constrained('enderecos');
             $table->timestamps();
         });
     }

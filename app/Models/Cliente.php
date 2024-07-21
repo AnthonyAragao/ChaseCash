@@ -17,7 +17,7 @@ class Cliente extends Model
         return $this->vendasRelationship;
     }
 
-    public function getEnderecoAttribute(): Endereco
+    public function getEnderecoAttribute(): ?Endereco
     {
         return $this->enderecoRelationship;
     }
