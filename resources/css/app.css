@@ -20,7 +20,7 @@ body{
 
 main{
     width: 100%;
-    padding: 24px;
+    padding: 30px 24px;
     background-color: #F2F7F9;
     margin-left: 310px;
 }
@@ -91,4 +91,171 @@ h2{
     border-radius: 4px;
     text-transform: uppercase;
     font-weight: bold;
+}
+
+/* Classes ultilitarias */
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: .7rem;
+}
+
+.col-6 {
+    width: 50%!important;
+}
+
+.col-12 {
+    width: 100%!important;
+}
+
+.col-4 {
+    width: 33.33%!important;
+}
+
+.col-3 {
+    width: 25%!important;
+}
+
+/* -----------------Card --------------- */
+.card-form {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    height: fit-content;
+}
+
+.card-form__title{
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* ----------------- Chat whatsapp --------------- */
+.form-group__textarea__chat {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 110px;
+    min-height: 110px;
+    background-image: url("../../public/images/background-whats.jpg");
+    background-position: center;
+    transition: border-color 0.2s;
+    font-size: .9rem;
+    font-weight: 500;
+}
+.form-group__textarea__chat:focus {
+    outline: none;
+    border-color: #25d366;
+}
+
+.chat__whats{
+    background-color: #166534;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+}
+
+#containerChat {
+    height: 0;
+    transition: height 0.5s;
+    overflow: hidden;
+}
+
+#containerChat .form-group {
+    margin-top: 15px;
+    margin-bottom:0
+}
+
+.chat__whats__open {
+    height: 194px!important;
+}
+
+/* -----------------Form cliente --------------- */
+.card__bolhas{
+    background-color: #F1F0F5;
+    margin-top: 20px;
+    height: 270px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    padding: 25px;
+}
+
+.container-bolhas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    position: absolute;
+    top: 40%;
+    left: 85%;
+}
+
+.bolhas {
+    width: 60px;
+    height: 60px;
+    background-color: #FFB54D;
+    position: absolute;
+    border-radius: 60%;
+}
+
+.bolha1 {
+    top: 20%;
+    left: 20%;
+
+}
+
+.bolha2 {
+    top: 42%;
+    left: -12%;
+}
+
+.bolha3 {
+    top: 42%;
+    left: 52%;
+}
+
+.bolha4 {
+    top:70%;
+    left: 4%;
+}
+
+.bolha5 {
+    top: 70%;
+    left: 35%;
+}
+
+.about-client {
+    text-align: center;
+}
+
+.about-client h4{
+    margin-top: 25px;
+    font-weight: bold;
+    color: rgb(133 77 14);
+}
+
+.about-client ul{
+    list-style-type: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.about-client p{
+    font-weight: bold;
+    font-size: 14px;
 }

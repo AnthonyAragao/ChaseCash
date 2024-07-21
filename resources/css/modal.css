@@ -113,12 +113,4 @@
     outline: none;
     border-color: #333;
 }
-.row {
-    display: flex;
-    flex-direction: row;
-    gap: .7rem;
-}
 
-.col-6 {
-    width: 50%;
-}
