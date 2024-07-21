@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: space-between;
     background-color: #ffffff;
-    position: relative;
+    position: fixed;
     transition: all .5s;
     width: 310px;
     height: 100vh;

@@ -22,6 +22,7 @@ main{
     width: 100%;
     padding: 24px;
     background-color: #F2F7F9;
+    margin-left: 310px;
 }
 
 h2{
@@ -34,6 +35,7 @@ h2{
 .page-path-and-img{
     display: flex;
     align-items: center;
+    margin: 1rem 0;
 }
 
 .page-path-and-img img{
@@ -76,28 +78,7 @@ h2{
 }
 
 
-.search-and-add{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-top:15px;
-}
-
-.search-and-add__input{
-    border: 1px solid #e5e7eb;
-    border-radius: 4px;
-    padding: 5px 10px;
-    width: 200px;
-    font-size: 12px;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.search-and-add__input:focus{
-    outline: none;
-    box-shadow: 0 0 0 1px #7D7D7D;
-}
-
-.search-and-add__link{
+.add__link{
     text-decoration: none;
     font-size: 10px;
     color: white;
