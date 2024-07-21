@@ -39,26 +39,31 @@
         </thead>
 
         <tbody>
-            @foreach ($produtos as $produto)
-                <tr>
-                    <td>{{ $produto->fornecedor }}</td>
-                    <td>{{ $produto->codigo }}</td>
-                    <td>{{ $produto->nome }}</td>
-                    <td>{{ number_format($produto->preco_venda, 2, ',', '.') }}</td>
-                    <td>{{ $produto->pontos }}</td>
-                    <td class="table-btns">
-                        <a href="" class="table-btns__edit">
-                            <i class="fa-solid fa-pen"></i> Editar
-                        </a>
+            @if(empty($produtos))
+                <tr><td>Nenhum produto encontrado</td></tr>
+            @else
+                @foreach ($produtos as $produto)
+                    <tr>
+                        <td>{{ $produto->fornecedor }}</td>
+                        <td>{{ $produto->codigo }}</td>
+                        <td>{{ $produto->nome }}</td>
+                        <td>{{ number_format($produto->preco_venda, 2, ',', '.') }}</td>
+                        <td>{{ $produto->pontos }}</td>
+                        <td class="table-btns">
+                            <a href="" class="table-btns__edit">
+                                <i class="fa-solid fa-pen"></i> Editar
+                            </a>
 
-                        <a href="" class="table-btns__delete">
-                            <i class="fa-solid fa-trash"></i> Excluir
-                        </a>
-                    </td>
-                </tr>
-            @endforeach
+                            <a href="" class="table-btns__delete">
+                                <i class="fa-solid fa-trash"></i> Excluir
+                            </a>
+                        </td>
+                    </tr>
+                @endforeach
+            @endif
         </tbody>
     </table>
+    
     {{ $produtos->links() }}
 </div>
 

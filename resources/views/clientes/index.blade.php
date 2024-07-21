@@ -35,28 +35,25 @@
         </thead>
 
         <tbody>
-            @foreach ($clientes as $cliente)
-                <tr>
-                    <td>{{ $cliente->nome }}</td>
-                    <td>{{ formatPhoneNumber($cliente->telefone) }}</td>
-                    <td>{{ $cliente->email ?? 'Não informado' }}</td>
-                    <td class="table-btns">
-                        <a href="{{ route("clientes.show", Crypt::encrypt($cliente->id)) }}" class="table-btns__view">
-                            <i class="fa-solid fa-eye"></i> Visualizar
-                        </a>
-
-                        <a href="" class="table-btns__edit">
-                            <i class="fa-solid fa-pen"></i> Editar
-                        </a>
-
-                        <a href="" class="table-btns__delete">
-                            <i class="fa-solid fa-trash"></i> Excluir
-                        </a>
-                    </td>
-                </tr>
-            @endforeach
+            @if(empty($clientes))
+                <tr><td>Nenhum cliente encontrado</td></tr>
+            @else
+                @foreach ($clientes as $cliente)
+                    <tr>
+                        <td>{{ $cliente->nome }}</td>
+                        <td>{{ formatPhoneNumber($cliente->telefone) }}</td>
+                        <td>{{ $cliente->email ?? 'Não informado' }}</td>
+                        <td class="table-btns">
+                            <a href="{{ route("clientes.show", Crypt::encrypt($cliente->id)) }}" class="table-btns__view__client">
+                                <i class="fa-solid fa-eye"></i> Visualizar
+                            </a>
+                        </td>
+                    </tr>
+                @endforeach
+            @endif
         </tbody>
     </table>
+
     {{ $clientes->links() }}
 </div>
 @endsection
