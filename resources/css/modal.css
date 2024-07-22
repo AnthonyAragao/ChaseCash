@@ -70,7 +70,7 @@
     gap: 4px;
 }
 
-.modal-footer__salvar{
+.modal__footer__salvar{
     background-color: #10b981;
     color: white;
     box-shadow: 0 0 3px #6b7280;

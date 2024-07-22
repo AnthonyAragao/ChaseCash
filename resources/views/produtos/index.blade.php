@@ -3,7 +3,7 @@
 @section('content')
 {{-- Caminho da página --}}
 <div class="page-path-and-img">
-    <img src="{{asset("images/produtos.png")}}" alt="">
+    {{-- <img src="{{asset("images/produtos.png")}}" alt=""> --}}
 
     <div>
         <h2>Meus produtos</h2>
@@ -15,7 +15,7 @@
     </div>
 </div>
 
-<a href="" class="add__link" id="btn_open_modal">
+<a href="" class="add-link" id="btn_open_modal">
     <i class="fa-solid fa-plus"></i> Novo produto
 </a>
 
@@ -63,7 +63,7 @@
             @endif
         </tbody>
     </table>
-    
+
     {{ $produtos->links() }}
 </div>
 
@@ -128,12 +128,11 @@
 
         <div class="modal__footer">
             <button type="button" class="btn_close_modal">Fechar</button>
-            <button type="submit" class="modal-footer__salvar">Salvar</button>
+            <button type="submit" class="modal__footer__salvar">Salvar</button>
         </div>
     </form>
 </x-modal>
 @endsection
-
 
 @section('scripts')
     <script>
@@ -142,7 +141,8 @@
         const custo = document.getElementById('custo');
         const preco_venda = document.getElementById('preco_venda');
 
-        function calcularMargemEMarkup() {
+        function calcularMargemEMarkup()
+        {
             const custoValue = parseFloat(custo.value.replace(',', '.'));
             const precoVendaValue = parseFloat(preco_venda.value.replace(',', '.'));
 

@@ -13,7 +13,7 @@
     </div>
 </div>
 
-<a href="" class="add__link">
+<a href="" class="add-link">
     <i class="fa-solid fa-plus"></i> Novo cliente
 </a>
 

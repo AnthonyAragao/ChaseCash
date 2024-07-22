@@ -105,15 +105,15 @@
 
     {{-- Chat Whatsapp --}}
     <div class="card-form col-6">
-        <button id="chatButton" class="chat__whats"><i class="fa-brands fa-whatsapp"></i> Iniciar chat</button>
+        <button id="chatButton" class="chat-whats"><i class="fa-brands fa-whatsapp"></i> Iniciar chat</button>
 
         <div id="containerChat">
             <div class="form-group">
                 <label for="mensagem">Mensagem:</label>
-                <textarea name="mensagem" id="mensagem" cols="30" rows="5" class="form-group__textarea__chat"></textarea>
+                <textarea name="mensagem" id="mensagem" cols="30" rows="5" class="form-group__chat"></textarea>
             </div>
 
-            <button id="sendMessage" class="chat__whats"><i class="fa-solid fa-paper-plane"></i> Enviar mensagem</button>
+            <button id="sendMessage" class="chat-whats"><i class="fa-solid fa-paper-plane"></i> Enviar mensagem</button>
         </div>
     </div>
 </div>
@@ -127,9 +127,9 @@
         const sendMessage = document.getElementById('sendMessage');
 
         chatButton.addEventListener('click', () => {
-            containerChat.classList.toggle('chat__whats__open');
+            containerChat.classList.toggle('chat-whats--open');
 
-            if (containerChat.classList.contains('chat__whats__open')) {
+            if (containerChat.classList.contains('chat-whats--open')) {
                 chatButton.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Fechar chat';
             } else {
                 chatButton.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Iniciar chat';
