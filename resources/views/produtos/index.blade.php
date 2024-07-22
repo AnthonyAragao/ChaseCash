@@ -47,14 +47,14 @@
                         <td>{{ $produto->fornecedor }}</td>
                         <td>{{ $produto->codigo }}</td>
                         <td>{{ $produto->nome }}</td>
-                        <td>{{ number_format($produto->preco_venda, 2, ',', '.') }}</td>
+                        <td>{{ formatNumber($produto->preco_venda) }}</td>
                         <td>{{ $produto->pontos }}</td>
-                        <td class="table-btns">
-                            <a href="" class="table-btns__edit">
+                        <td class="group-btns">
+                            <a href="" class="btn__edit">
                                 <i class="fa-solid fa-pen"></i> Editar
                             </a>
 
-                            <a href="" class="table-btns__delete">
+                            <a href="" class="btn__delete">
                                 <i class="fa-solid fa-trash"></i> Excluir
                             </a>
                         </td>

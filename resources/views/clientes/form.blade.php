@@ -26,54 +26,54 @@
         <div class="row">
             <div class="form-group col-6">
                 <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome" value="{{ $cliente->nome }}" required>
+                <input type="text" name="nome" id="nome" value="{{ $cliente->nome }}" {{ $form ?? null }} required>
             </div>
 
             <div class="form-group col-6">
                 <label for="telefone">Telefone:</label>
-                <input type="text" name="telefone" id="telefone" value="{{ formatPhoneNumber($cliente->telefone) }}" required>
+                <input type="text" name="telefone" id="telefone" value="{{ formatPhoneNumber($cliente->telefone) }}" {{ $form ?? null }}>
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-6">
                 <label for="data_nascimento">Data de nascimento:</label>
-                <input type="date" name="data_nascimento" id="nome" value="{{ $cliente->data_nascimento }}" required>
+                <input type="date" name="data_nascimento" id="nome" value="{{ $cliente->data_nascimento }}" {{ $form ?? null }}>
             </div>
 
             <div class="form-group col-6">
                 <label for="email">E-mail:</label>
-                <input type="email" name="email" id="email" value="{{ $cliente->email }}">
+                <input type="email" name="email" id="email" value="{{ $cliente->email }}" {{ $form ?? null }}>
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-3">
                 <label for="cep">CEP:</label>
-                <input type="text" name="cep" id="cep" value="{{ isset($cliente->endereco) ? $cliente->endereco->cep : ''}}">
+                <input type="text" name="cep" id="cep" value="{{ isset($cliente->endereco) ? $cliente->endereco->cep : ''}}"  {{ $form ?? null }}>
             </div>
 
             <div class="form-group col-3">
                 <label for="cidade">Cidade:</label>
-                <input type="text" name="cidade" id="cidade" value="{{  isset($cliente->endereco) ? $cliente->endereco->cidade : '' }}">
+                <input type="text" name="cidade" id="cidade" value="{{  isset($cliente->endereco) ? $cliente->endereco->cidade : '' }}" {{ $form ?? null }}>
             </div>
 
             <div class="form-group col-3">
                 <label for="logradouro">Logradouro:</label>
-                <input type="text" name="logradouro" id="logradouro" value="{{  isset($cliente->endereco) ? $cliente->endereco->logradouro : '' }}">
+                <input type="text" name="logradouro" id="logradouro" value="{{  isset($cliente->endereco) ? $cliente->endereco->logradouro : '' }}" {{ $form ?? null }}>
             </div>
 
             <div class="form-group col-3">
                 <label for="numero">Número:</label>
-                <input type="text" name="numero" id="numero" value="{{  isset($cliente->endereco) ? $cliente->endereco->numero : '' }}">
+                <input type="text" name="numero" id="numero" value="{{  isset($cliente->endereco) ? $cliente->endereco->numero : '' }}" {{ $form ?? null }}>
             </div>
         </div>
 
-
-        {{-- <div class="form__btns">
-            <button type="submit" class="btn__primary">Salvar</button>
-            <a href="{{ route("clientes.index") }}" class="btn__cancel">Cancelar</a>
-        </div> --}}
+        <div class="group-btns">
+            <a href="" class="btn__edit">
+                <i class="fa-solid fa-pen"></i> Editar
+            </a>
+        </div>
     </form>
 </div>
 

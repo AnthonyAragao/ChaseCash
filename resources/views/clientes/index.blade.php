@@ -43,8 +43,8 @@
                         <td>{{ $cliente->nome }}</td>
                         <td>{{ formatPhoneNumber($cliente->telefone) }}</td>
                         <td>{{ $cliente->email ?? 'Não informado' }}</td>
-                        <td class="table-btns">
-                            <a href="{{ route("clientes.show", Crypt::encrypt($cliente->id)) }}" class="table-btns__view__client">
+                        <td class="group-btns">
+                            <a href="{{ route("clientes.show", Crypt::encrypt($cliente->id)) }}" class="btn__view__client">
                                 <i class="fa-solid fa-eye"></i> Visualizar
                             </a>
                         </td>

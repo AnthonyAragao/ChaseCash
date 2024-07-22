@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\View\View;
 
 class ClienteController extends Controller
 {
@@ -12,23 +13,19 @@ class ClienteController extends Controller
         private Cliente $clientes
     ){}
 
-    public function index()
+    public function index(): View
     {
         return view('clientes.index', [
             'clientes' => $this->clientes->paginate(10)
         ]);
     }
 
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show(string $id)
+    public function show(string $id): View
     {
         $cliente = $this->clientes->find(Crypt::decrypt($id));
         return view('clientes.form', [
-            'cliente' => $cliente
+            'cliente' => $cliente,
+            'form' => 'disabled'
         ]);
     }
 

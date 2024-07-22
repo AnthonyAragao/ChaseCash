@@ -65,12 +65,12 @@ tbody tr td{
     font-weight: 600;
 }
 
-.table-btns{
+.group-btns{
     display: flex;
     gap: 5px;
 }
 
-.table-btns__view, .table-btns__edit, .table-btns__delete{
+.btn__view, .btn__edit, .btn__delete{
     padding: 2px 8px;
     border-radius: 4px;
     text-decoration: none;
@@ -80,34 +80,34 @@ tbody tr td{
     color: white;
 }
 
-.table-btns__view{
+.btn__view{
     background-color: rgb(79, 70, 229);
 }
 
-.table-btns__edit{
+.btn__edit{
     background-color: rgb(250 204 21);
     color: rgb(133 77 14);
 }
 
-.table-btns__delete{
+.btn__delete{
     background-color: rgb(220, 38, 38);
 }
 
-.table-btns__edit:hover{
+.btn__edit:hover{
     background-color: rgb(250 204 21 / 80%);
 }
 
-.table-btns__delete:hover{
+.btn__delete:hover{
     background-color: rgb(220, 38, 38, 0.8);
 
 }
 
-.table-btns__view:hover{
+.btn__view:hover{
     background-color: rgb(79, 70, 229, 0.8);
 }
 
 
-.table-btns__view__client{
+.btn__view__client{
     background-color: #F0F3F3;
     color: #466F65;
     padding: 6px 14px;
