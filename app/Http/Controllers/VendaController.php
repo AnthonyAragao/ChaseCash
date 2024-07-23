@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\View\View;
 use App\Models\{Cliente, Venda};
-use Illuminate\Support\Facades\Crypt;
 
 class VendaController extends Controller
 {
