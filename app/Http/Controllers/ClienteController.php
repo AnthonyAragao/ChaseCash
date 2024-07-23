@@ -32,17 +32,17 @@ class ClienteController extends Controller
 
     public function edit(string $id)
     {
-        //
+        $cliente = $this->clientes->find(Crypt::decrypt($id));
+        return view('clientes.form', [
+            'cliente' => $cliente,
+        ]);
     }
 
-
-    public function update(Request $request, string $id)
+    public function vendas(string $id): View
     {
-        //
-    }
+        $cliente =  $this->clientes->findOrFail(Crypt::decrypt($id));
+        $vendas = $cliente->vendas;
 
-    public function destroy(string $id)
-    {
-        //
+        return view('clientes.vendas', compact('cliente', 'vendas'));
     }
 }

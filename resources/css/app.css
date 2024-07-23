@@ -116,6 +116,10 @@ h2{
     width: 25%!important;
 }
 
+.w-content{
+    width: fit-content!important;
+}
+
 /* -----------------Card --------------- */
 .card-form {
     width: 100%;

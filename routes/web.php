@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{ClienteController, ProdutoController};
+use App\Http\Controllers\{ClienteController, ProdutoController, VendaController};
 use Illuminate\Support\Facades\Route;
 
 
@@ -9,5 +9,6 @@ Route::get('/', function () {
 });
 
 
-Route::resource('produtos', ProdutoController::class);
+Route::get('clientes/{id}/vendas', [ClienteController::class, 'vendas'])->name('clientes.vendas');
 Route::resource('clientes', ClienteController::class);
+Route::resource('produtos', ProdutoController::class);

@@ -70,8 +70,16 @@
         </div>
 
         <div class="group-btns">
+            <a href="{{ route("clientes.vendas", Crypt::encrypt($cliente->id)) }}" class="btn__view__sales">
+                <i class="fa-solid fa-list"></i> Ver vendas
+            </a>
+
             <a href="" class="btn__edit">
                 <i class="fa-solid fa-pen"></i> Editar
+            </a>
+
+            <a href="" class="btn__delete">
+                <i class="fa-solid fa-trash"></i> Excluir
             </a>
         </div>
     </form>
