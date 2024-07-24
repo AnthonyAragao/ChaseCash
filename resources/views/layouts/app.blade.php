@@ -27,7 +27,7 @@
             </div>
 
             <ul id="side-items">
-                <li class="side-item active" data-id="dashboard">
+                <li class="side-item" data-id="">
                     <a href="">
                         <i class="fa-solid fa-chart-line"></i>
                         <span class="item-description">Dashboard</span>
