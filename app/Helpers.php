@@ -22,3 +22,12 @@ if(!function_exists('formatNumber')){
         return number_format($number, 2, ',', '.');
     }
 }
+
+
+if (!function_exists('formatDate')) {
+    function formatDate($date)
+    {
+        return date('d/m/Y', strtotime($date));
+    }
+}
+

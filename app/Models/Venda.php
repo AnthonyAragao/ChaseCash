@@ -11,6 +11,27 @@ class Venda extends Model
 
     protected $guarded = [];
 
+    // Acessors
+    public function getQuantidadePontosAttribute()
+    {
+        $quantidadePontos = 0;
+        foreach($this->itensVenda as $item){
+            $quantidadePontos += $item->produto->pontos;
+        }
+
+        return $quantidadePontos;
+    }
+
+    public function getQuantidadeParcelasAttribute()
+    {
+        return $this->parcelas->count();
+    }
+
+    public function getParcelasPagasAttribute()
+    {
+        return $this->parcelas->where('pago', '1')->count();
+    }
+
     // Getters
     public function getClienteAttribute(): Cliente
     {

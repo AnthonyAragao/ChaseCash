@@ -149,7 +149,7 @@ h2{
     background-image: url("../../public/images/background-whats.jpg");
     background-position: center;
     transition: border-color 0.2s;
-    font-size: .9rem;   
+    font-size: .9rem;
     font-weight: 500;
 }
 .form-group__chat:focus {
@@ -262,4 +262,68 @@ h2{
 .about-client p{
     font-weight: bold;
     font-size: 14px;
+}
+
+
+/* Card do cliente */
+.name-and-info{
+    width: fit-content;
+}
+
+.name-and-info__perfil{
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.name-and-info__perfil--links{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    gap: 5px;
+}
+
+.name-and-info__perfil--links a{
+    color: #333;
+}
+
+.name-and-info__info{
+    margin-top:10px;
+    font-size: .8rem;
+    font-weight: 600;
+    color: #333;
+}
+/* Vendas do cliente */
+.container-report-sales{
+    margin-top: 2rem;
+}
+
+.container-report-sales__title{
+    margin-bottom:6px;
+}
+
+.card-form__info{
+    font-size: .8rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-form__info--status{
+    color: green;
+}
+
+.card-form__info--status-pendente{
+    color: #f43b48;
+}
+
+.container-report-sales__table{
+    background-color: transparent;
+}
+
+.container-report-sales__table tfoot tr td:first-child,
+.container-report-sales__table tfoot tr td:last-child{
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #1f2937;
+    font-weight: bold;
 }

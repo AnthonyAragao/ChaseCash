@@ -17,129 +17,82 @@
     </div>
 </div>
 
-<div class="card-form w-content">
-    <div style="
-        display: flex;
-        justify-content: space-between;
-        gap: 60px;
-        ">
+<div class="card-form name-and-info">
+    <div class="name-and-info__perfil">
         <h3>{{ $cliente->nome }}</h3>
-        <div style="
-            display: flex;
-            text-decoration: none;
-            align-items: center;
-            gap: 5px;">
-            <a href="{{ route("clientes.edit", Crypt::encrypt($cliente->id)) }}" style=" color: #333">
+        <div class="name-and-info__perfil--links">
+            <a href="{{ route("clientes.edit", Crypt::encrypt($cliente->id)) }}">
                 <i class="fa-solid fa-edit"></i>
             </a>
-
-            <a href="" style=" color: #333">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-
-            <a href="" style=" color: #333">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
+            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            <a href=""><i class="fa-solid fa-envelope"></i></a>
         </div>
     </div>
 
-    <p style="
-        margin-top:10px;
-        font-size: .8rem;
-        font-weight: 600;
-        color: #333;">
+    <p class="name-and-info__info">
         <i class="fa-solid fa-location-dot"></i>
         {{ $cliente->endereco->logradouro }} número: {{ $cliente->endereco->numero }}, {{ $cliente->endereco->bairro }}
     </p>
 
-    <p style="
-        font-size: .8rem;
-        font-weight: 600;
-        color: #333;">
+    <p class="name-and-info__info">
         <i class="fa-solid fa-phone"></i> {{ formatPhoneNumber($cliente->telefone) }}
     </p>
 </div>
 
 
-<div style="margin-top: 2rem ">
-    <h2>Relatório de Vendas</h2>
+{{-- Compras do cliente --}}
+<div class="container-report-sales">
+    <h2 class="container-report-sales__title">Relatório de Vendas</h2>
 
-    <div style="margin-top:6px" class="card-form">
-        <div class="card-form__title">
-            <h4>Venda #1205215 - 14/07/2024</h4>
+    @if($vendas->isEmpty())
+        <p>Nenhuma venda registrada para este cliente.</p>
+    @endif
+
+    @foreach ($vendas as $venda)
+        <div class="card-form">
+            <div class="card-form__title">
+                <h4>Venda #1205215 - {{ formatDate($venda->data_venda) }}</h4>
+            </div>
+            <p class="card-form__info"><strong>Parcelas pagas:</strong> {{ $venda->parcelasPagas }}/{{ $venda->quantidadeParcelas }} </p>
+            <p class="card-form__info"><strong>Saldo devedor:</strong> R$ {{ formatNumber($venda->saldo_devedor) }}</p>
+            <p class="card-form__info"><strong>Valor total:</strong> R$ {{ formatNumber($venda->valor_total) }}</p>
+            <p class="card-form__info"><strong>Status:
+                <span class="card-form__info--status @if ($venda->status == 'pendente') card-form__info--status-pendente @endif">
+                    {{ $venda->status }}
+                </span></strong>
+            </p>
+
+            <table class="container-report-sales__table">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Valor unitário</th>
+                        <th>Valor total</th>
+                    </tr>
+                </thead>
+
+                @foreach ($venda->itensVenda as $item)
+                    <tbody>
+                        <tr>
+                            <td>{{ $item->produto->codigo }} - {{ $item->produto->nome }}</td>
+                            <td>{{ $item->quantidade }}</td>
+                            <td>R$ {{ formatNumber($item->preco_unitario) }}</td>
+                            <td>R$ {{ formatNumber($item->preco_unitario * $item->quantidade) }}</td>
+                        </tr>
+                    </tbody>
+                @endforeach
+
+                <tfoot>
+                    <tr>
+                        <td>(Total pontos: {{ $venda->quantidadePontos }})</td>
+                        <td></td>
+                        <td></td>
+                        <td>Subtotal: R$ {{ formatNumber($venda->valor_total) }}</td>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
-
-        <p style="
-            font-size: .8rem;
-            font-weight: 600;
-            color: #333;">
-            <strong>Parcelas pagas:</strong> 1/2
-        </p>
-        <p style="
-            font-size: .8rem;
-            font-weight: 600;
-            color: #333;">
-            <strong>Saldo devedor:</strong> R$ 100,00</p>
-        <p style="
-            font-size: .8rem;
-            font-weight: 600;
-            color: #333;">
-            <strong>Valor total:</strong> R$ 100,00</p>
-        <p style="
-            font-size: .8rem;
-            font-weight: 600;
-            color: #333;">
-            <strong>Status: <span style="color: green;">Finalizada</span></strong>
-        </p>
-
-        <table style="background-color: transparent">
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Quantidade</th>
-                    <th>Valor unitário</th>
-                    <th>Valor total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>036060 - Hidratante Desodorante Corporal Inebriante For Her 200g</td>
-                    <td>2</td>
-                    <td>R$ 50,00</td>
-                    <td>R$ 100,00</td>
-                </tr>
-
-                <tr>
-                    <td>036060 - Hidratante Desodorante Corporal Inebriante For Her 200g</td>
-                    <td>2</td>
-                    <td>R$ 50,00</td>
-                    <td>R$ 100,00</td>
-                </tr>
-            </tbody>
-
-            <tfoot>
-                <tr>
-                    <td
-                    style="
-                        padding: 6px 10px;
-                        font-size: 14px;
-                        color: #1f2937;
-                        font-weight: bold;">(Total pontos: 43,64)</td>
-                    <td></td>
-                    <td></td>
-                    <td style="
-                        padding: 6px 10px;
-                        font-size: 14px;
-                        color: #1f2937;
-                        font-weight: bold;">
-                        Subtotal: R$ 100,00
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
-
-
-
-    </div>
+    @endforeach
 </div>
 @endsection
