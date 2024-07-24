@@ -149,7 +149,7 @@ h2{
     background-image: url("../../public/images/background-whats.jpg");
     background-position: center;
     transition: border-color 0.2s;
-    font-size: .9rem;
+    font-size: .9rem;   
     font-weight: 500;
 }
 .form-group__chat:focus {

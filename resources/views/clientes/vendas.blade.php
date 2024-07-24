@@ -62,32 +62,34 @@
 
 
 <div style="margin-top: 2rem ">
-    <h2>Vendas</h2>
+    <h2>Relatório de Vendas</h2>
 
     <div style="margin-top:6px" class="card-form">
-        <h5>ANTHONY ARAGÃO: Venda #2 (26W3G6IQ)</h5>
-        <p style="
-            font-size: .8rem;
-            font-weight: 600;
-            color: #333;">Venda realizada em 01/01/2021</p>
+        <div class="card-form__title">
+            <h4>Venda #1205215 - 14/07/2024</h4>
+        </div>
+
         <p style="
             font-size: .8rem;
             font-weight: 600;
             color: #333;">
-            Parcelas pagas: 1/2
+            <strong>Parcelas pagas:</strong> 1/2
         </p>
         <p style="
             font-size: .8rem;
             font-weight: 600;
-            color: #333;">Saldo devedor: R$ 100,00</p>
+            color: #333;">
+            <strong>Saldo devedor:</strong> R$ 100,00</p>
         <p style="
             font-size: .8rem;
             font-weight: 600;
-            color: #333;">Valor total: R$ 100,00</p>
+            color: #333;">
+            <strong>Valor total:</strong> R$ 100,00</p>
         <p style="
             font-size: .8rem;
             font-weight: 600;
-            color: #333;">Status: <span style="color: green;">Finalizada</span>
+            color: #333;">
+            <strong>Status: <span style="color: green;">Finalizada</span></strong>
         </p>
 
         <table style="background-color: transparent">
@@ -100,6 +102,13 @@
                 </tr>
             </thead>
             <tbody>
+                <tr>
+                    <td>036060 - Hidratante Desodorante Corporal Inebriante For Her 200g</td>
+                    <td>2</td>
+                    <td>R$ 50,00</td>
+                    <td>R$ 100,00</td>
+                </tr>
+
                 <tr>
                     <td>036060 - Hidratante Desodorante Corporal Inebriante For Her 200g</td>
                     <td>2</td>
