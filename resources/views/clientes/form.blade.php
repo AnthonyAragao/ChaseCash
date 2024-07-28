@@ -31,19 +31,25 @@
 
             <div class="form-group col-6">
                 <label for="telefone">Telefone:</label>
-                <input type="text" name="telefone" id="telefone" value="{{ formatPhoneNumber($cliente->telefone) }}" {{ $form ?? null }}>
+                <input type="text" name="telefone" id="telefone" value="{{ isset($cliente->telefone) ? formatPhoneNumber($cliente->telefone) : '' }}"
+                    {{ $form ?? null }}>
             </div>
         </div>
 
         <div class="row">
-            <div class="form-group col-6">
-                <label for="data_nascimento">Data de nascimento:</label>
-                <input type="date" name="data_nascimento" id="nome" value="{{ $cliente->data_nascimento }}" {{ $form ?? null }}>
+            <div class="form-group col-4">
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf" value="{{ isset($cliente->cpf) ? formatCpf($cliente->cpf) : '' }}" {{ $form ?? null }}>
             </div>
 
-            <div class="form-group col-6">
+            <div class="form-group col-4">
+                <label for="data_nascimento">Data de nascimento:</label>
+                <input type="date" name="data_nascimento" id="nome" value="{{ isset($cliente->data_nascimento) ? $cliente->data_nascimento : '' }}" {{ $form ?? null }}>
+            </div>
+
+            <div class="form-group col-4">
                 <label for="email">E-mail:</label>
-                <input type="email" name="email" id="email" value="{{ $cliente->email }}" {{ $form ?? null }}>
+                <input type="email" name="email" id="email" value="{{ isset($cliente->email) ? $cliente->email : '' }}" {{ $form ?? null }}>
             </div>
         </div>
 

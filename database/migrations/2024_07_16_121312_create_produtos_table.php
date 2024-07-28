@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('codigo')->unique();
             $table->decimal('custo', 8, 2);
             $table->decimal('preco_venda', 8, 2);
-            $table->bigInteger('pontos')->default(0);
+            $table->decimal('pontos', 8 ,2)->default(0);
             $table->integer('estoque')->nullable();
             $table->string('imagem')->nullable();
             $table->timestamps();

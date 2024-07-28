@@ -28,7 +28,7 @@ class ProdutoController extends Controller
             'codigo' => $request->codigo,
             'custo' => floatval(str_replace(',', '.', $request->custo)),
             'preco_venda' => floatval(str_replace(',', '.', $request->preco_venda)),
-            'pontos' => $request->pontos,
+            'pontos' => floatval(str_replace(',', '.', $request->pontos)),
             'estoque' => $request->estoque,
         ]);
 

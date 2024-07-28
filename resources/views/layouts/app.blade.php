@@ -35,7 +35,7 @@
                 </li>
 
                 <li class="side-item" data-id="vendas">
-                    <a href="">
+                    <a href="{{ route("vendas.index") }}">
                         <i class="fa-solid fa-shopping-cart"></i>
                         <span class="item-description">
                             Vendas

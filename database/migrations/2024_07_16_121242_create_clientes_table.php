@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('email')->nullable()->unique();
+            $table->string('cpf')->nullable()->unique();
             $table->string('telefone')->nullable();
             $table->date('data_nascimento')->nullable();
             $table->foreignId('endereco_id')->nullable()->constrained('enderecos');
