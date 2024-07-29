@@ -327,3 +327,64 @@ h2{
     color: #1f2937;
     font-weight: bold;
 }
+
+
+/* Form registro da venda */
+/* Card etapas da venda */
+.card-phases{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-phases__stage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fa-circle-check, .fa-circle{
+    font-size: 1.1rem;
+}
+
+.card-phases__stage-progress{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+}
+
+.card-phases__stage-progress div{
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+}
+
+.card-phases__stage-progress span{
+    color: #333;
+}
+
+.card-phases__stage-title{
+    font-weight: bold;
+    color: #333;
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+
+.progess-active div{
+    background-color: #4f46e5;
+}
+
+.progess-active span{
+    color: #4f46e5;
+}
+
+.title-active{
+    color: #4f46e5;
+}
