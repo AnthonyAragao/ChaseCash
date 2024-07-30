@@ -21,7 +21,6 @@ body{
 main{
     width: 100%;
     padding: 30px 24px;
-    background-color: #F2F7F9;
     margin-left: 310px;
 }
 
@@ -377,14 +376,55 @@ h2{
     text-transform: uppercase;
 }
 
-.progess-active div{
+.progress-active div{
     background-color: #4f46e5;
 }
 
-.progess-active span{
+.progress-active span{
     color: #4f46e5;
 }
 
 .title-active{
     color: #4f46e5;
 }
+
+
+/* Btns prosseguir e retroceder etapas */
+.group-btns__phases{
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.group-btns__phases button{
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+#prevBtn{
+    background-color: #F0F3F3;
+    color: rgb(79, 70, 229);
+    border: 1px solid rgb(79, 70, 229);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.10);
+    transition: 0.5s;
+}
+
+#prevBtn:hover{
+    background-color: rgb(79, 70, 229);
+    color: white;
+}
+
+#nextBtn{
+    background-color: rgb(79, 70, 229);
+}
+
+
