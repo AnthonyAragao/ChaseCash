@@ -93,6 +93,10 @@ h2{
 }
 
 /* Classes ultilitarias */
+.d-none{
+    display: none!important;
+}
+
 .row {
     display: flex;
     flex-direction: row;
@@ -365,6 +369,10 @@ h2{
     background-color: #333;
 }
 
+.stage-initial{
+    background-color: #4f46e5!important;
+}
+
 .card-phases__stage-progress span{
     color: #333;
 }
@@ -387,7 +395,6 @@ h2{
 .title-active{
     color: #4f46e5;
 }
-
 
 /* Btns prosseguir e retroceder etapas */
 .group-btns__phases{
@@ -427,4 +434,24 @@ h2{
     background-color: rgb(79, 70, 229);
 }
 
+
+/* Form registro da venda */
+.card-form-phases{
+    background-color: #f5f5f5;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-form-phases__title{
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+#second-stage, #third-stage{
+    display: none;
+}
 

@@ -20,7 +20,7 @@
     <div class="card-phases__stage" id="stage-1">
         <div class="card-phases__stage-progress">
             <div></div>
-            <span><i class="fa-solid fa-circle-check"></i></span>
+            <span><i class="fa-solid fa-circle"></i></span>
             <div></div>
         </div>
 
@@ -49,60 +49,74 @@
 </div>
 
 {{-- Formulário etapas --}}
+<div class="card-form-phases">
+    <form action="{{ route("vendas.store") }}" method="POST">
+        @csrf
+        {{-- Etapa 01 --}}
+        <div id="first-stage">
+            <h2 class="card-form-phases__title">Informe o cliente da venda </h2>
 
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="cliente">Cliente: <span>*</span></label>
+                    <select name="cliente" id="cliente" class="form-control" required>
+                        <option value="">Selecione um cliente</option>
+                        <option value="1">Cliente 01</option>
+                        <option value="2">Cliente 02</option>
+                        <option value="3">Cliente 03</option>
+                    </select>
+                </div>
 
-{{-- Btns prosseguir nas etapas --}}
-<div class="group-btns__phases">
-    <button type="button" id="prevBtn">Voltar</button>
-    <button type="button" id="nextBtn">Prosseguir</button>
+                <div class="form-group col-6">
+                    <label for="data">Data da venda: <span>*</span></label>
+                    <input type="date" name="data" id="data" class="form-control" required>
+                </div>
+            </div>
+        </div>
+
+        {{-- Etapa 02 --}}
+        <div id="second-stage">
+            <h2 class="card-form-phases__title">Itens da venda </h2>
+
+            <table style="background-color: transparent">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Valor unitário</th>
+                        <th>Valor total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        {{-- Etapa 03 --}}
+        <div id="third-stage">
+            <h2 class="card-form-phases__title">Informe o pagamento </h2>
+
+            <div></div>
+        </div>
+
+        {{-- Btns prosseguir nas etapas --}}
+        <div class="group-btns__phases">
+            <button type="button" id="prevBtn">Voltar</button>
+            <button type="button" id="nextBtn">Prosseguir</button>
+        </div>
+    </form>
 </div>
 @endsection
 
 
-@section('scripts')
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        let currentStage = 0;
-        const totalStages = 3;
-
-        const updateStages = () => {
-            for (let i = 1; i <= totalStages; i++) {
-                const stage = document.getElementById(`stage-${i}`);
-                const progress = stage.querySelector('.card-phases__stage-progress');
-                const title = stage.querySelector('.card-phases__stage-title');
-                const icon = progress.querySelector('i');
-
-                if (i < currentStage || i === currentStage) {
-                    progress.classList.add('progress-active');
-                    title.classList.add('title-active');
-                    icon.classList.remove('fa-regular', 'fa-circle');
-                    icon.classList.add('fa-solid', 'fa-circle-check');
-                } else {
-                    progress.classList.remove('progress-active');
-                    title.classList.remove('title-active');
-                    icon.classList.remove('fa-solid', 'fa-circle-check');
-                    icon.classList.add('fa-regular', 'fa-circle');
-                }
-            }
-        };
-
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            event.preventDefault();
-            if (currentStage < totalStages) {
-                currentStage++;
-                updateStages();
-            }
-        });
-
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            event.preventDefault();
-            if (currentStage >= 1) {
-                currentStage--;
-                updateStages();
-            }
-        });
-
-        updateStages();
-    });
-</script>
-@endsection
+{{-- Scripts --}}
+@vite('resources/js/etapas-cadastro-venda.js')
