@@ -114,3 +114,17 @@
     border-color: #333;
 }
 
+input[type="number"] {
+    padding: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
+    transition: border-color 0.2s;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #333;
+}
+
+
+

@@ -59,17 +59,17 @@
             <div class="row">
                 <div class="form-group col-6">
                     <label for="cliente">Cliente: <span>*</span></label>
-                    <select name="cliente" id="cliente" class="form-control" required>
+                    <select name="cliente" id="cliente" required>
                         <option value="">Selecione um cliente</option>
-                        <option value="1">Cliente 01</option>
-                        <option value="2">Cliente 02</option>
-                        <option value="3">Cliente 03</option>
+                        @foreach ($clientes as $cliente)
+                            <option value="{{ $cliente->id }}">{{ $cliente->nome }}</option>
+                        @endforeach
                     </select>
                 </div>
 
                 <div class="form-group col-6">
                     <label for="data">Data da venda: <span>*</span></label>
-                    <input type="date" name="data" id="data" class="form-control" required>
+                    <input type="date" name="data" id="data" required>
                 </div>
             </div>
         </div>
@@ -90,14 +90,26 @@
                 </thead>
 
                 <tbody>
+                </tbody>
+
+                <tfoot style="
+                    display: flow-root;
+                    margin-top: 30px;
+                    ">
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td class="form-group">
+                            <label for="produto" style="font-size: 11px; color:#7d7d7d">Produto a adicionar:</label>
+                            <select name="produto" id="produto">
+                                <option value="">Selecione um produto</option>
+                                @foreach ($produtos as $produto)
+                                    <option value="{{ $produto->id }}">{{ $produto->nome }}</option>
+                                @endforeach
+                            </select>
+                        </td>
                         <td></td>
                         <td></td>
                         <td></td>
                     </tr>
-                </tbody>
             </table>
         </div>
 
@@ -120,3 +132,42 @@
 
 {{-- Scripts --}}
 @vite('resources/js/etapas-cadastro-venda.js')
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const produtoSelect = document.getElementById('produto');
+        const tbody = document.querySelector('tbody');
+
+        const produtos = @json($produtos); 
+
+        produtoSelect.addEventListener('change', function() {
+            const produtoId = this.value;
+            const produto = produtos.find(p => p.id == produtoId);
+
+            if (produto) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${produto.nome}</td>
+                    <td><input type="number" value="1" min="1" class="quantidade" /></td>
+                    <td>${produto.preco_venda}</td>
+                    <td class="valor-total">${produto.preco_venda}</td>
+                    <td><button type="button" class="remove-btn btn__delete">Remover</button></td>
+                `;
+
+                tbody.appendChild(row);
+
+                // Adiciona evento para atualizar o valor total quando a quantidade mudar
+                row.querySelector('.quantidade').addEventListener('input', function() {
+                    const quantidade = this.value;
+                    const valorUnitario = produto.preco_venda;
+                    const valorTotal = quantidade * valorUnitario;
+                    row.querySelector('.valor-total').innerText = valorTotal.toFixed(2);
+                });
+
+                // Adiciona evento para remover a linha
+                row.querySelector('.remove-btn').addEventListener('click', function() {
+                    tbody.removeChild(row);
+                });
+            }
+        });
+    });
+</script>
