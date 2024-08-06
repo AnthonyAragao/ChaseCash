@@ -12,6 +12,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+:root{
+    --primary-color: #4f46e5;
+}
+
 body{
     min-height: 100vh;
     background-color: #f2f7f9;
@@ -23,6 +27,7 @@ main{
     padding: 30px 24px;
     margin-left: 310px;
 }
+
 
 h2{
     color: #1f2937;
@@ -84,7 +89,7 @@ h2{
     text-decoration: none;
     font-size: 10px;
     color: white;
-    background-color: #4f46e5;
+    background-color: var(--primary-color);
     font-weight: 600;
     padding: 3px 10px;
     border-radius: 4px;
@@ -123,11 +128,20 @@ h2{
     width: fit-content!important;
 }
 
+.mt-0{
+    margin-top: 0!important;
+}
+
+.mb-0{
+    margin-bottom: 0!important;
+}
+
+
 /* -----------------Card --------------- */
 .card-form {
     width: 100%;
     padding: 15px;
-    margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px #ccc;
     height: fit-content;
@@ -191,7 +205,6 @@ h2{
 /* -----------------Form cliente --------------- */
 .card__bolhas{
     background-color: #F1F0F5;
-    margin-top: 20px;
     height: 270px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -370,7 +383,7 @@ h2{
 }
 
 .stage-initial{
-    background-color: #4f46e5!important;
+    background-color: var(--primary-color)!important;
 }
 
 .card-phases__stage-progress span{
@@ -385,15 +398,15 @@ h2{
 }
 
 .progress-active div{
-    background-color: #4f46e5;
+    background-color: var(--primary-color);
 }
 
 .progress-active span{
-    color: #4f46e5;
+    color: var(--primary-color);
 }
 
 .title-active{
-    color: #4f46e5;
+    color: var(--primary-color);
 }
 
 /* Btns prosseguir e retroceder etapas */
