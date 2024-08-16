@@ -21,8 +21,7 @@
                 <img src="{{ asset("images/avatar.jpg") }}" id="user_avatar" alt="Avatar">
 
                 <p id="user_infos">
-                    <span class="item-description">Irineu</span>
-                    <span class="item-description">Lorem ipsum</span>
+                    <span class="item-description">Irineu Santos</span>
                 </p>
             </div>
 
