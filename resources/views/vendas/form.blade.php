@@ -17,7 +17,7 @@
 
 
 <style>
-.step-wizard-list{
+.step-wizard-list {
     background: #f5f5f5;
     box-shadow: 0 15px 25px rgba(0,0,0,0.1);
     color: #333;
@@ -29,7 +29,7 @@
     z-index: 10;
 }
 
-.step-wizard-item{
+.step-wizard-item {
     padding: 0 20px;
     flex-basis: 0;
     -webkit-box-flex: 1;
@@ -42,20 +42,22 @@
     min-width: 170px;
     position: relative;
 }
-.step-wizard-item + .step-wizard-item:after{
+
+.step-wizard-item + .step-wizard-item:after {
     content: "";
     position: absolute;
     left: 0;
-    top: 19px;
+    top: 15px; /* Ajustado para alinhar com os novos tamanhos */
     background: rgb(79, 70, 229);
     width: 100%;
     height: 2px;
     transform: translateX(-50%);
     z-index: -10;
 }
-.progress-count{
-    height: 40px;
-    width:40px;
+
+.progress-count {
+    height: 30px; /* Diminuído de 40px */
+    width: 30px; /* Diminuído de 40px */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,10 +68,11 @@
     z-index:10;
     color: transparent;
 }
-.progress-count:after{
+
+.progress-count:after {
     content: "";
-    height: 40px;
-    width: 40px;
+    height: 30px; /* Diminuído de 40px */
+    width: 30px; /* Diminuído de 40px */
     background: rgb(79, 70, 229);
     position: absolute;
     left: 50%;
@@ -78,55 +81,63 @@
     border-radius: 50%;
     z-index: -10;
 }
-.progress-count:before{
+
+.progress-count:before {
     content: "";
-    height: 10px;
-    width: 20px;
-    border-left: 3px solid #fff;
-    border-bottom: 3px solid #fff;
+    height: 6px;
+    width: 12px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -60%) rotate(-45deg);
     transform-origin: center center;
 }
-.progress-label{
-    font-size: 14px;
+
+.progress-label {
+    font-size: 12px;
     font-weight: 600;
-    margin-top: 10px;
+    margin-top: 6px;
 }
+
 .current-item .progress-count:before,
-.current-item ~ .step-wizard-item .progress-count:before{
+.current-item ~ .step-wizard-item .progress-count:before {
     display: none;
 }
-.current-item ~ .step-wizard-item .progress-count:after{
-    height:10px;
-    width:10px;
+
+.current-item ~ .step-wizard-item .progress-count:after {
+    height: 8px;
+    width: 8px;
 }
-.current-item ~ .step-wizard-item .progress-label{
+
+.current-item ~ .step-wizard-item .progress-label {
     opacity: 0.5;
 }
-.current-item .progress-count:after{
+
+.current-item .progress-count:after {
     background: #fff;
     border: 2px solid rgb(79, 70, 229);
 }
-.current-item .progress-count{
+
+.current-item .progress-count {
     color: rgb(79, 70, 229);
 }
+
 </style>
 
 {{-- Section etapas --}}
 <section>
-    <ul class="step-wizard-list">
+    <ul class="step-wizard-list ">
         <li class="step-wizard-item">
             <span class="progress-count">1</span>
             <span class="progress-label">Cliente</span>
         </li>
-        <li class="step-wizard-item">
+        <li class="step-wizard-item current-item">
             <span class="progress-count">2</span>
             <span class="progress-label">Itens compra</span>
         </li>
-        <li class="step-wizard-item current-item">
+        <li class="step-wizard-item ">
             <span class="progress-count">3</span>
             <span class="progress-label">Pagamento</span>
         </li>
